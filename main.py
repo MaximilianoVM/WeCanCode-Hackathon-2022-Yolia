@@ -28,33 +28,23 @@ fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 meta1 = Meta(52, 124)
 meta2 = Meta(WIDTH - 52, HEIGHT -20)
 
-<<<<<<< Updated upstream
 player1 = pygame.sprite.GroupSingle()
 player1.add( Jugador(100, 100, False, 'mexica') )
 
 meta1 = Meta(20 + 32, 60 + 64)
-=======
->>>>>>> Stashed changes
 
 while True: 
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-<<<<<<< Updated upstream
         
         
-=======
->>>>>>> Stashed changes
     
     WIN.blit(fondo_surface, (0,0))
 
     WIN.blit(meta1.image, meta1.rect)
-<<<<<<< Updated upstream
     player1.draw(WIN)
-=======
-    WIN.blit(meta2.image, meta2.rect)
->>>>>>> Stashed changes
 
     pygame.display.update()
     clock.tick(60)
