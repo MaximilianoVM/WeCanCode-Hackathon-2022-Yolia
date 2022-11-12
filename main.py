@@ -9,7 +9,9 @@ pygame.display.set_caption("hackathon")
 clock = pygame.time.Clock()
 
 testSurface = pygame.image.load('assets/fondoPrueba2.png')
-playerSurface = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
+
+playerSurface = pygame.image.load('assets/Sprite-0006.png')
+
 
 while True: 
     for event in pygame.event.get(): 
@@ -18,7 +20,7 @@ while True:
             exit()
     
     WIN.blit(testSurface, (0,0))
-    WIN.blit(testSurface, (100,50))
+    WIN.blit(playerSurface, (100,50))
 
     pygame.display.update()
     clock.tick(60)
