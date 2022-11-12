@@ -141,8 +141,7 @@ while True:
 
     else:
         game_active = True
-        #nivel += 1
-        nivel = 4
+        nivel += 1
         contador_fin = 0
         llego = False
 
