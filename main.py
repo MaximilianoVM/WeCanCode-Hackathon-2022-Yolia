@@ -29,16 +29,18 @@ start_time = 0
 
 #=================== GRUPOS
 player1 = pygame.sprite.GroupSingle()
-player1.add(Jugador(20+32+(4*64), 60+(5*64), False, 'mexica'))
+player1.add(Jugador(False, 'mexica'))
 
 player2 = pygame.sprite.GroupSingle()
-player2.add(Jugador(WIDTH-20-32-(4*64), 60+(5*64), False, 'cristiano'))
+player2.add(Jugador(False, 'cristiano'))
 
 fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
-
 meta1 = Meta(52, 124)
-meta2 = Meta(52 + 576 + 20, 124)
+meta2 = Meta(648, 124)
+
+picos1 = Picos(52 + 64 + 64, 124, 'enredadera')
+picos2 = Picos(648 + 64, 124, 'rosales')
 
 contador_fin = 0
 
@@ -56,8 +58,11 @@ while True:
     if game_active:
     
         WIN.blit(fondo_surface, (0,0))
+
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
+        WIN.blit(picos1.image, picos1.rect)
+        WIN.blit(picos2.image, picos2.rect)
 
         player1.draw(WIN)
         player1.update()
@@ -71,9 +76,10 @@ while True:
 
             if contador_fin == 30:
                 game_active = False
-
-        player1.draw(WIN)
-        player2.draw(WIN)
+        
+        if (player1.sprite.collision_picos(picos1) or player2.sprite.collision_picos(picos2)):
+            player1.sprite.restart()
+            player2.sprite.restart()
 
     else:
         WIN.blit(fondo_surface, (0,0))

@@ -1,17 +1,23 @@
 import pygame
 
 class Jugador(pygame.sprite.Sprite):
-    def __init__(self, x, y, dalt, religion):
+    def __init__(self, dalt, religion):
         super().__init__()
 
-        self.x = x
-        self.y = y
+        self.religion = religion
+
+        if self.religion == 'mexica':
+            self.x = 308
+            self.y = 380
+        else:
+            self.x = 904
+            self.y = 380
 
         self.frames = []
         self.frame_index = 0
 
         #=================== CRISTIANO ===================#
-        if religion == 'cristiano' :
+        if self.religion == 'cristiano' :
             #=================== SIN DALTONISMO
             if dalt == False:
                 jugador1 = pygame.transform.scale2x(pygame.image.load('assets/CalebCum/Sprite-0004.png').convert_alpha())
@@ -29,7 +35,7 @@ class Jugador(pygame.sprite.Sprite):
                 print("dalt")
         
         #==================== MEXICA ====================#
-        elif religion == 'mexica':
+        elif self.religion == 'mexica':
             #=================== SIN DALTONISMO
             if dalt == False:
                 jugador1 = pygame.transform.scale2x(pygame.image.load('assets/CanekCum/fondoPrueba1.png').convert_alpha())
@@ -111,3 +117,15 @@ class Jugador(pygame.sprite.Sprite):
             return True
         else:
             return False
+
+    def collision_picos(self, picos):
+        if self.rect.colliderect(picos.rect):
+            return True
+        else:
+            return False
+
+    def restart(self):
+        if self.religion == 'mexica':
+            self.rect = self.image.get_rect(midbottom = (308, 380))
+        else:
+            self.rect = self.image.get_rect(midbottom = (904, 380))
