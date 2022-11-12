@@ -49,34 +49,17 @@ while True:
             exit()
 
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_DOWN:
-                print('down')
-                player1.sprite.rect.y += 64
-                player2.sprite.rect.y += 64
-
-            if event.key == pygame.K_UP:
-                print('up')
-                player1.sprite.rect.y -= 64
-                player2.sprite.rect.y -= 64
-
-            if event.key == pygame.K_LEFT:
-                print('left')
-                player1.sprite.rect.x -= 64
-                player2.sprite.rect.x -= 64
-
-            if event.key == pygame.K_RIGHT:
-                print('right')
-                player1.sprite.rect.x += 64
-                player2.sprite.rect.x += 64
+            Jugador.playerInput(player1, event, player1, player2)
 
     if game_active:
     
         WIN.blit(fondo_surface, (0,0))
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
-        
+
         player1.draw(WIN)
         player1.update()
+        
         player2.draw(WIN)
         player2.update()
 
