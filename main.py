@@ -18,7 +18,7 @@ pygame.display.set_caption("YOLIA")
 
 clock = pygame.time.Clock()
 
-testFont = pygame.font.SysFont("comicsans", 50)
+text_font = pygame.font.Font('fonts/I-pixel-u.ttf', 64)
 
 pygame.mixer.init()
 pygame.mixer.music.load("music/musica.wav")
@@ -59,11 +59,13 @@ while True:
             pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
             pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
             Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
-            print(player2.sprite.rect.y)
-            print(player2.sprite.rect.x)
 
     if game_active:
         WIN.blit(fondo_surface, (0,0))
+
+        text_surface = text_font.render('YOLIA', False, 'Black')
+        text_rectangle = text_surface.get_rect(center = (WIDTH/2, 30))
+        WIN.blit(text_surface, text_rectangle)
 
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)

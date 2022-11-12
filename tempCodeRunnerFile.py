@@ -1,1 +1,1 @@
-pared1
+pri
