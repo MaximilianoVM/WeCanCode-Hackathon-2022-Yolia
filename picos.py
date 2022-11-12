@@ -10,9 +10,9 @@ class Picos(pygame.sprite.Sprite):
         self.frames = []
         self.frame_index = 0
 
-        if tipo=='rosales':
+        if tipo=='rosales': #rosales es un obtaculo que reduce vida del cielo
             self.image.load('assets/rosales.png').convert_alpha()
-        elif tipo=='enredadera':
+        elif tipo=='enredadera':    #enredadera es obstaculo que reduce vida del mictlan
             self.image.load('assets/Enredaderas/enredadera2.png').convert_alpha()
         
 
