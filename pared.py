@@ -7,8 +7,7 @@ class Pared(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
-        self.frames = []
-        self.frame_index = 0
+        self.image = pygame.image.load('assets/pared.jpg').convert_alpha() # Carga imagen
+        self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
 
-        self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha() # Cambiar Sprite
-        self.rect = self.image.get_rect(midbottom = (self.x, self.y))    
+        self.rect = self.image.get_rect(midbottom = (self.x, self.y)) # Define rectangulo 
