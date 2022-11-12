@@ -8,7 +8,7 @@ class Pared(pygame.sprite.Sprite):
         self.y = y
 
         if tipo == 'hoyo':
-            self.image = pygame.image.load('assets/Hoyo/hoyo.png').convert_alpha() # Carga imagen
+            self.image = pygame.image.load('assets/Hoyo/HoyoNube.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
             
         elif tipo == 'piedra':

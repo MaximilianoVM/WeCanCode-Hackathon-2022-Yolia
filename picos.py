@@ -12,7 +12,7 @@ class Picos(pygame.sprite.Sprite):
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
             
         elif tipo == 'enredadera':
-            self.image = pygame.image.load('assets/Enredaderas/enredadera2.png').convert_alpha() # Carga imagen
+            self.image = pygame.image.load('assets/Enredaderas/enredadera.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
         
         #self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
