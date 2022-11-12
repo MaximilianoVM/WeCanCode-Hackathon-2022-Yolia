@@ -20,26 +20,19 @@ game_active = False
 start_time = 0
 
 #=================== GRUPOS
-jugador_group = pygame.sprite.GroupSingle()
-jugador_group.add(Jugador(100, 100, dalt, 'mexica'))
+player1 = pygame.sprite.GroupSingle()
+player1.add(Jugador(564, 124, False, 'mexica'))
 
 fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
 meta1 = Meta(52, 124)
 meta2 = Meta(WIDTH - 52, HEIGHT -20)
 
-player1 = pygame.sprite.GroupSingle()
-player1.add(Jugador(564, 124, False, 'mexica'))
-
-meta1 = Meta(20 + 32, 60 + 64)
-
 while True: 
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-        
-        
     
     WIN.blit(fondo_surface, (0,0))
 

@@ -10,9 +10,6 @@ class Jugador(pygame.sprite.Sprite):
         self.frames = []
         self.frame_index = 0
 
-        self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha() # Cambiar Sprite
-        self.rect = self.image.get_rect(midbottom = (self.x, self.y))
-
         #=================== CRISTIANO ===================#
         if religion == 'cristiano' :
             #=================== SIN DALTONISMO
