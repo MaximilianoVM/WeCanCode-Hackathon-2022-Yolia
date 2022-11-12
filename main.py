@@ -241,14 +241,13 @@ while True:
 
             #PICOS
             picos.empty()
-            picos.add(Picos(20 + (64 * 2) - 32, 60 + (64 * 5), 'enredadera'))
-            picos.add(Picos(20 + (64 * 1) - 32, 60 + (64 * 6), 'enredadera'))
+            picos.add(Picos(20 + (64 * 2) - 32, 60 + (64 * 5), 'enredadera', dalt))
+            picos.add(Picos(20 + (64 * 1) - 32, 60 + (64 * 6), 'enredadera', dalt))
 
-            picos.add(Picos(616 + (64 * 1) - 32, 60 + (64 * 1), 'rosales'))
-            picos.add(Picos(616 + (64 * 3) - 32, 60 + (64 * 2), 'rosales'))
+            picos.add(Picos(616 + (64 * 1) - 32, 60 + (64 * 1), 'rosales', dalt))
+            picos.add(Picos(616 + (64 * 3) - 32, 60 + (64 * 2), 'rosales', dalt))
 
             #MOVILES
-            
             movil1 = Movil(20 + (64 * 6) - 32, 60 + (64 * 5), 'escultura')
             movil2 = Movil(616 + (64 * 5) - 32, 60 + (64 * 4), 'estatua')
 
