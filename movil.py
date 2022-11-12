@@ -35,7 +35,6 @@ class Movil(pygame.sprite.Sprite):
                 self.rect.x = 532
             if self.rect.x  < 20:
                 self.rect.x = 20
-            
             if self.rect.y  > 572:
                 self.rect.y = 572
             if self.rect.y  < 60:
@@ -43,11 +42,10 @@ class Movil(pygame.sprite.Sprite):
 
         if self.tipo == 'estatua':
             if self.rect.x  > 1128:
-                self.rect.x = 1128 
+                self.rect.x = 1128
             if self.rect.x  < 616:
                 self.rect.x = 616
-                
             if self.rect.y  > 572:
-                self.rect.y = 572 
+                self.rect.y = 572
             if self.rect.y  < 60:
                 self.rect.y = 60
