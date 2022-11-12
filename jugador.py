@@ -17,14 +17,14 @@ class Jugador(pygame.sprite.Sprite):
         if religion == 'cristiano' :
             #=================== SIN DALTONISMO
             if dalt == False:
-                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb1.png').convert_alpha())
-                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb2.png').convert_alpha())
-                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb3.png').convert_alpha())
-                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb4.png').convert_alpha())
-                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb5.png').convert_alpha())
-                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb6.png').convert_alpha())
-                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb7.png').convert_alpha())
-                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/Caleb/Caleb8.png').convert_alpha())
+                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb1.png').convert_alpha())
+                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb2.png').convert_alpha())
+                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb3.png').convert_alpha())
+                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb4.png').convert_alpha())
+                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb5.png').convert_alpha())
+                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb6.png').convert_alpha())
+                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb7.png').convert_alpha())
+                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/TupacCristiano/Caleb8.png').convert_alpha())
 
                 self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
             #=================== DALTONISMO
@@ -35,14 +35,14 @@ class Jugador(pygame.sprite.Sprite):
         elif religion == 'mexica':
             #=================== SIN DALTONISMO
             if dalt == False:
-                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica1.png').convert_alpha())
-                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica2.png').convert_alpha())
-                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica3.png').convert_alpha())
-                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica4.png').convert_alpha())
-                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica5.png').convert_alpha())
-                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica6.png').convert_alpha())
-                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica7.png').convert_alpha())
-                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/Mexica/Mexica8.png').convert_alpha())
+                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek1.png').convert_alpha())
+                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek2.png').convert_alpha())
+                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek3.png').convert_alpha())
+                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek4.png').convert_alpha())
+                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek5.png').convert_alpha())
+                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek6.png').convert_alpha())
+                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek7.png').convert_alpha())
+                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/TupacMexica/Canek8.png').convert_alpha())
 
                 self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
             #=================== DALTONISMO

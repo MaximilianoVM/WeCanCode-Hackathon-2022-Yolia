@@ -15,6 +15,9 @@ testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
 playerSurface = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
 
+player1 = pygame.sprite.GroupSingle()
+player1.add( Jugador(100, 100, False, 'mexica') )
+
 meta1 = Meta(20 + 32, 60 + 64)
 
 while True: 
@@ -28,6 +31,7 @@ while True:
     WIN.blit(testSurface, (0,0))
     WIN.blit(playerSurface, (100,50))
     WIN.blit(meta1.image, meta1.rect)
+    player1.draw(WIN)
 
     pygame.display.update()
     clock.tick(60)
