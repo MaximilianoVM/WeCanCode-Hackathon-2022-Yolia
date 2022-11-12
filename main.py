@@ -139,6 +139,11 @@ while True:
         player2.draw(WIN)
         player2.update()
 
+        text_font = pygame.font.Font('fonts/I-pixel-u.ttf', 60)
+        text_surface = text_font.render('YOLIA', False, 'Black')
+        text_rectangle = text_surface.get_rect(center = (WIDTH/2, 25))
+        WIN.blit(text_surface, text_rectangle)
+
     else:
         game_active = True
         nivel += 1
