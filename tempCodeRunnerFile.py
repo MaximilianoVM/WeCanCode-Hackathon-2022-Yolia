@@ -1,1 +1,1 @@
-ame_active
+pared2
