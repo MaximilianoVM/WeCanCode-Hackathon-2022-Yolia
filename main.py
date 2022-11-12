@@ -1,10 +1,23 @@
 import pygame
+from sys import exit
 
-WIDTH, HEIGHT = 900, 500
+pygame.init()
+
+WIDTH, HEIGHT = 1200, 600
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
-pygame.display.set_caption("R0B0 / K1LL")
+pygame.display.set_caption("hackathon")
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('fonts/RobotRoc.otf', 32)
 
-game_active = False
-start_time = 0
+testSurface = pygame.image.load('assets/fondoPrueba.png')
+
+while True: 
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+    
+    WIN.blit( testSurface, (0,0) )
+
+    pygame.display.update()
+    clock.tick(60)
+        
