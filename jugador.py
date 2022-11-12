@@ -124,17 +124,6 @@ class Jugador(pygame.sprite.Sprite):
         else:
             return False
 
-    def empuja(self, movil):
-        if self.rect.colliderect(movil.rect):
-            if self.rect.x < movil.rect.x:
-                movil.rect.x += 64
-            elif self.rect.x > movil.rect.x:
-                movil.rect.x -= 64
-            elif self.rect.y < movil.rect.y:
-                movil.rect.y += 64
-            elif self.rect.y > movil.rect.y:
-                movil.rect.y -= 64
-
     def restart(self):
         if self.religion == 'mexica':
             self.rect = self.image.get_rect(midbottom = (308, 380))

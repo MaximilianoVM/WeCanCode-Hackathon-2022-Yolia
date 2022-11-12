@@ -84,6 +84,16 @@ while True:
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
 
+        #IMPRIME MOVILES
+        WIN.blit(movil1.image, movil1.rect)
+        WIN.blit(movil2.image, movil2.rect)
+
+        #EMPUJAR MOVILES
+        if(player1.sprite.collision(movil1)):
+            movil1.mover(pos_ant1)
+        if(player2.sprite.collision(movil2)):
+            movil2.mover(pos_ant2)
+
         #DIBUJA PICOS
         picos.draw(WIN)
 
