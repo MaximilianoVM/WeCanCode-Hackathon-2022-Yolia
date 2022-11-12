@@ -248,8 +248,8 @@ while True:
             picos.add(Picos(616 + (64 * 3) - 32, 60 + (64 * 2), 'rosales'))
 
             #MOVILES
+            
             movil1 = Movil(20 + (64 * 6) - 32, 60 + (64 * 5), 'escultura')
-
             movil2 = Movil(616 + (64 * 5) - 32, 60 + (64 * 4), 'estatua')
 
     pygame.display.update()
