@@ -4,7 +4,9 @@ class Jugador(pygame.sprite.Sprite):
     def __init__(self, dalt, religion):
         super().__init__()
 
-        if religion == 'mexica':
+        self.religion = religion
+
+        if self.religion == 'mexica':
             self.x = 308
             self.y = 380
         else:
@@ -15,7 +17,7 @@ class Jugador(pygame.sprite.Sprite):
         self.frame_index = 0
 
         #=================== CRISTIANO ===================#
-        if religion == 'cristiano' :
+        if self.religion == 'cristiano' :
             #=================== SIN DALTONISMO
             if dalt == False:
                 jugador1 = pygame.transform.scale2x(pygame.image.load('assets/CalebCum/Sprite-0004.png').convert_alpha())
@@ -33,7 +35,7 @@ class Jugador(pygame.sprite.Sprite):
                 print("dalt")
         
         #==================== MEXICA ====================#
-        elif religion == 'mexica':
+        elif self.religion == 'mexica':
             #=================== SIN DALTONISMO
             if dalt == False:
                 jugador1 = pygame.transform.scale2x(pygame.image.load('assets/CanekCum/fondoPrueba1.png').convert_alpha())
@@ -61,9 +63,13 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugadorWalk[int(self.jugador_index)]
     
     @staticmethod
-    def playerInput(self, event, player1, player2):
+    def playerInput(self, event, player1, player2, WIDTH, HEIGHT):
+
+        #=================== MOVIMIENTO ===================#
+
         if event.key == pygame.K_DOWN:
             print('down')
+            
             player1.sprite.rect.y += 64
             player2.sprite.rect.y += 64
 
@@ -81,6 +87,27 @@ class Jugador(pygame.sprite.Sprite):
             print('right')
             player1.sprite.rect.x += 64
             player2.sprite.rect.x += 64
+        
+        #=================== LIMITES PARA Y ===================#
+        if player1.sprite.rect.y  > 572:
+            player1.sprite.rect.y = 572 
+        if player1.sprite.rect.y  < 60:
+            player1.sprite.rect.y = 60
+
+        if player2.sprite.rect.y  > 572:
+            player2.sprite.rect.y = 572 
+        if player2.sprite.rect.y  < 60:
+            player2.sprite.rect.y = 60
+        #=================== LIMITES PARA X ===================#
+        if player1.sprite.rect.x  > 532:
+            player1.sprite.rect.x = 532
+        if player1.sprite.rect.x  < 20:
+            player1.sprite.rect.x = 20
+
+        if player2.sprite.rect.x  > 1128:
+            player2.sprite.rect.x = 1128 
+        if player2.sprite.rect.x  < 616:
+            player2.sprite.rect.x = 616
 
     def update(self):
         self.animationState()
@@ -96,11 +123,9 @@ class Jugador(pygame.sprite.Sprite):
             return True
         else:
             return False
-    
-    def reset(self):
+
+    def restart(self):
         if self.religion == 'mexica':
-            self.x = 308
-            self.y = 380
+            self.rect = self.image.get_rect(midbottom = (308, 380))
         else:
-            self.x = 904
-            self.y = 380
+            self.rect = self.image.get_rect(midbottom = (904, 380))

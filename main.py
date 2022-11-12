@@ -39,7 +39,7 @@ fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 meta1 = Meta(52, 124)
 meta2 = Meta(648, 124)
 
-picos1 = Picos(52 + 64, 124, 'enredadera')
+picos1 = Picos(52 + 64 + 64, 124, 'enredadera')
 picos2 = Picos(648 + 64, 124, 'rosales')
 
 contador_fin = 0
@@ -51,7 +51,9 @@ while True:
             exit()
 
         if event.type == pygame.KEYDOWN:
-            Jugador.playerInput(player1, event, player1, player2)
+            Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
+            print(player2.sprite.rect.y)
+            print(player2.sprite.rect.x)
 
     if game_active:
     
@@ -76,11 +78,8 @@ while True:
                 game_active = False
         
         if (player1.sprite.collision_picos(picos1) or player2.sprite.collision_picos(picos2)):
-            player1.sprite.reset()
-            player2.sprite.reset()
-
-        player1.draw(WIN)
-        player2.draw(WIN)
+            player1.sprite.restart()
+            player2.sprite.restart()
 
     else:
         WIN.blit(fondo_surface, (0,0))

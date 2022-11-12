@@ -1,1 +1,2 @@
-pygame.time.delay(1000)
+ayer1.sprite.restart()
+            player2.sprite.restart()

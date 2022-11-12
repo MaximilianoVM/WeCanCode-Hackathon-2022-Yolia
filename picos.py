@@ -10,11 +10,13 @@ class Picos(pygame.sprite.Sprite):
         self.frames = []
         self.frame_index = 0
 
-        if tipo=='rosales': #rosales es un obtaculo del cielo que reduce vida 
-            self.image.load('assets/rosales.png').convert_alpha()
-        elif tipo=='enredadera':    #enredadera es obstaculo del mictlan que reduce vida 
-            self.image.load('assets/Enredaderas/enredadera2.png').convert_alpha()
+        if tipo == 'rosales':
+            self.image = pygame.image.load('assets/Rosales/rosales.png').convert_alpha() # Carga imagen
+            self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
+            
+        elif tipo == 'enredadera':
+            self.image = pygame.image.load('assets/Enredaderas/enredadera2.png').convert_alpha() # Carga imagen
+            self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
         
-
-
+        #self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
