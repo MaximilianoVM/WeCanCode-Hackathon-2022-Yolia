@@ -7,9 +7,6 @@ class Picos(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
-        self.frames = []
-        self.frame_index = 0
-
         if tipo == 'rosales':
             self.image = pygame.image.load('assets/Rosales/rosales.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x

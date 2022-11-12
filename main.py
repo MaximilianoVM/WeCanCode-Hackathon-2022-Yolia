@@ -3,6 +3,7 @@ from jugador import Jugador
 from pared import Pared
 from meta import Meta
 from picos import Picos
+from movil import Movil
 from sys import exit
 
 pygame.init()
@@ -18,7 +19,7 @@ pygame.display.set_caption("YOLIA")
 
 clock = pygame.time.Clock()
 
-testFont = pygame.font.SysFont("comicsans", 50)
+text_font = pygame.font.Font('fonts/I-pixel-u.ttf', 64)
 
 pygame.mixer.init()
 pygame.mixer.music.load("music/musica.wav")
@@ -70,8 +71,6 @@ while True:
             pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
             pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
             Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
-            print(player2.sprite.rect.y)
-            print(player2.sprite.rect.x)
 
     if game_active:
 
