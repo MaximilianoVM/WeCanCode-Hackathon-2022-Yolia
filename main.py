@@ -9,7 +9,7 @@ from sys import exit
 pygame.init()
 
 #=================== DALTONISMO SI O NO ===================#
-dalt = False
+dalt = True
 #==========================================================#
 
 WIDTH, HEIGHT = 1212, 656
@@ -36,7 +36,7 @@ player2 = pygame.sprite.GroupSingle()
 player2.add(Jugador(False, 'cristiano'))
 
 #FONDOS
-fondo_surface = pygame.image.load('assets/Fondos/FondoCompleto.png').convert()
+fondo_surface = pygame.image.load('assets/Fondos/FondoMarco.png').convert()
 fondo_surface = pygame.transform.scale2x(fondo_surface)
 
 #METAS FALSAS
