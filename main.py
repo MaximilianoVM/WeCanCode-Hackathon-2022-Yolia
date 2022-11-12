@@ -23,6 +23,7 @@ while True:
             pygame.quit()
             exit()
         
+        
     
     WIN.blit(testSurface, (0,0))
     WIN.blit(playerSurface, (100,50))
