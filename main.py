@@ -5,12 +5,12 @@ pygame.init()
 
 WIDTH, HEIGHT = 1212, 656
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
-pygame.display.set_caption("hackathon")
+pygame.display.set_caption("YOLIA")
 clock = pygame.time.Clock()
 
-testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png')
+testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
-playerSurface = pygame.image.load('assets/Sprite-0006.png')
+playerSurface = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
 
 
 while True: 
