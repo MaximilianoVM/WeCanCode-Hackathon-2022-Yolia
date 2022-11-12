@@ -36,6 +36,7 @@ player2.add(Jugador(WIDTH-20-32-(4*64), 60+(5*64), False, 'cristiano'))
 
 fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
+
 meta1 = Meta(52, 124)
 meta2 = Meta(52 + 576 + 20, 124)
 
