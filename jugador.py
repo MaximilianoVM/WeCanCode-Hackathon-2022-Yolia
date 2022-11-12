@@ -63,13 +63,12 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugadorWalk[int(self.jugador_index)]
     
     @staticmethod
-    def playerInput(self, event, player1, player2, WIDTH, HEIGHT):
+    def playerInput(event, player1, player2):
 
         #=================== MOVIMIENTO ===================#
 
         if event.key == pygame.K_DOWN:
             print('down')
-            
             player1.sprite.rect.y += 64
             player2.sprite.rect.y += 64
 
@@ -123,6 +122,17 @@ class Jugador(pygame.sprite.Sprite):
             return True
         else:
             return False
+
+    def empuja(self, movil):
+        if self.rect.colliderect(movil.rect):
+            if self.rect.x < movil.rect.x:
+                movil.rect.x += 64
+            elif self.rect.x > movil.rect.x:
+                movil.rect.x -= 64
+            elif self.rect.y < movil.rect.y:
+                movil.rect.y += 64
+            elif self.rect.y > movil.rect.y:
+                movil.rect.y -= 64
 
     def restart(self):
         if self.religion == 'mexica':

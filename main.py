@@ -47,6 +47,9 @@ picos2 = Picos(648 + 64, 124, 'rosales')
 pared1 = Pared(52 + 64, 124 + 64 + 64 + 64, 'piedra')
 pared2 = Pared(648 + 64 + 64, 124 + 64 + 64, 'hoyo')
 
+movil1 = Movil(372, 444, 'escultura')
+movil2 = Movil(968, 444, 'estatua')
+
 contador_fin = 0
 
 llego = False
@@ -60,7 +63,7 @@ while True:
         if (event.type == pygame.KEYDOWN and llego == False):
             pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
             pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
-            Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
+            Jugador.playerInput(event, player1, player2)
 
     if game_active:
         WIN.blit(fondo_surface, (0,0))
@@ -77,6 +80,9 @@ while True:
 
         WIN.blit(pared1.image, pared1.rect)
         WIN.blit(pared2.image, pared2.rect)
+
+        WIN.blit(movil1.image, movil1.rect)
+        WIN.blit(movil2.image, movil2.rect)
 
         if (player1.sprite.llega_meta(meta1) and player2.sprite.llega_meta(meta2)):
             llego = True
@@ -96,6 +102,13 @@ while True:
         if (player2.sprite.collision(pared2)):
             player2.sprite.rect.x = pos_ant2[0]
             player2.sprite.rect.y = pos_ant2[1]
+        
+        if (player1.sprite.collision(movil1)):
+            movil1.mover(pos_ant1)
+        
+        if (player2.sprite.collision(movil2)):
+            movil2.mover(pos_ant2)
+
 
         # MANTENERLOS AL FINAL DEL CICLO
         player1.draw(WIN)

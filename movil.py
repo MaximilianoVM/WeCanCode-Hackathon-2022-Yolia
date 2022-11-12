@@ -7,12 +7,47 @@ class Movil(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
-        if tipo=='estatua': #estatua es un obtaculo del cielo que reduce vida 
+        self.tipo = tipo
+
+        if self.tipo=='estatua': #estatua es un obtaculo del cielo que reduce vida 
             self.image = pygame.image.load('assets/Estatuas/estatua.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
 
-        elif tipo=='escultura': #escultura es obstaculo del mictlan que reduce vida 
+        elif self.tipo=='escultura': #escultura es obstaculo del mictlan que reduce vida 
             self.image = pygame.image.load('assets/Escultura/escultura.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
 
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
+    
+    def mover(self, pos_ant):
+        if pos_ant[1] > self.rect.y:
+            self.rect.y -= 64
+        elif pos_ant[1] < self.rect.y:
+            self.rect.y += 64
+        elif pos_ant[0] > self.rect.x:
+            self.rect.x -= 64
+        elif pos_ant[0] < self.rect.x:
+            self.rect.x += 64
+
+        ############LIMITES############
+        if self.tipo == 'escultura':
+            if self.rect.x  > 532:
+                self.rect.x = 532
+            if self.rect.x  < 20:
+                self.rect.x = 20
+            
+            if self.rect.y  > 572:
+                self.rect.y = 572
+            if self.rect.y  < 60:
+                self.rect.y = 60
+
+        if self.tipo == 'estatua':
+            if self.rect.x  > 1128:
+                self.rect.x = 1128 
+            if self.rect.x  < 616:
+                self.rect.x = 616
+                
+            if self.rect.y  > 572:
+                self.rect.y = 572 
+            if self.rect.y  < 60:
+                self.rect.y = 60
