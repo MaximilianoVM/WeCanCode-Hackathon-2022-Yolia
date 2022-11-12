@@ -44,7 +44,7 @@ picos1 = Picos(52 + 64 + 64, 124, 'enredadera')
 picos2 = Picos(648 + 64, 124, 'rosales')
 
 pared1 = Pared(52 + 64, 124 + 64 + 64 + 64, 'piedra')
-pared2 = Pared(648 + 64 + 64, 124 + 64 + 64, 'piedra')
+pared2 = Pared(648 + 64 + 64, 124 + 64 + 64, 'hoyo')
 
 contador_fin = 0
 
