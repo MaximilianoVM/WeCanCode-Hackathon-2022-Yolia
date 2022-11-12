@@ -55,9 +55,30 @@ class Jugador(pygame.sprite.Sprite):
         if self.jugador_index >= len(self.jugadorWalk):
             self.jugador_index = 0
         self.image = self.jugadorWalk[int(self.jugador_index)]
+    
+    @staticmethod
+    def playerInput(self, event, player1, player2):
+        if event.key == pygame.K_DOWN:
+            print('down')
+            player1.sprite.rect.y += 64
+            player2.sprite.rect.y += 64
+
+        if event.key == pygame.K_UP:
+            print('up')
+            player1.sprite.rect.y -= 64
+            player2.sprite.rect.y -= 64
+
+        if event.key == pygame.K_LEFT:
+            print('left')
+            player1.sprite.rect.x -= 64
+            player2.sprite.rect.x -= 64
+
+        if event.key == pygame.K_RIGHT:
+            print('right')
+            player1.sprite.rect.x += 64
+            player2.sprite.rect.x += 64
 
     def update(self):
-        #self.playerInput()
         self.animationState()
     
     def collision_meta(self, meta):
