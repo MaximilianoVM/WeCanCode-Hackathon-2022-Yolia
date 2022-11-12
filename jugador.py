@@ -91,4 +91,8 @@ class Jugador(pygame.sprite.Sprite):
         self.playerInput()
         self.animationState()
     
-
+    def collision_meta(self, meta):
+        if self.rect.colliderect(meta.rect):
+            return True
+        else:
+            return False
