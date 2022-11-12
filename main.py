@@ -64,7 +64,9 @@ while True:
     WIN.blit(meta1.image, meta1.rect)
     WIN.blit(meta2.image, meta2.rect)
     player1.draw(WIN)
+    player1.update()
     player2.draw(WIN)
+    player2.update()
 
     pygame.display.update()
     clock.tick(60)
