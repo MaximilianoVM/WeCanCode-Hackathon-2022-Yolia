@@ -28,23 +28,32 @@ game_active = True
 start_time = 0
 
 #=================== GRUPOS
+#PLAYERS
 player1 = pygame.sprite.GroupSingle()
 player1.add(Jugador(False, 'mexica'))
 
 player2 = pygame.sprite.GroupSingle()
 player2.add(Jugador(False, 'cristiano'))
 
+#FONDOS
 fondo_surface = pygame.image.load('assets/Fondos/FondoBien.png').convert()
 fondo_surface = pygame.transform.scale2x(fondo_surface)
 
+#METAS
 meta1 = Meta(52, 124)
 meta2 = Meta(648, 124)
 
-picos1 = Picos(52 + 64 + 64, 124, 'enredadera')
-picos2 = Picos(648 + 64, 124, 'rosales')
+#PICOS
+picos = pygame.sprite.Group()
+picos.add(Picos(52 + 64 + 64, 124, 'enredadera'))
+picos.add(Picos(648 + 64, 124, 'rosales'))
 
-pared1 = Pared(52 + 64, 124 + 64 + 64 + 64, 'piedra')
-pared2 = Pared(648 + 64 + 64, 124 + 64 + 64, 'hoyo')
+#PAREDES
+paredes = pygame.sprite.Group()
+paredes.add(Pared(52 + 64, 124 + 64 + 64 + 64, 'piedra'))
+paredes.add(Pared(648 + 64 + 64, 124 + 64 + 64, 'hoyo'))
+
+#===================#
 
 contador_fin = 0
 
@@ -56,6 +65,7 @@ while True:
             pygame.quit()
             exit()
 
+        #DETECTAR TECLAS
         if (event.type == pygame.KEYDOWN and llego == False):
             pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
             pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
@@ -64,35 +74,45 @@ while True:
             print(player2.sprite.rect.x)
 
     if game_active:
-        WIN.blit(fondo_surface, (0,0))
 
+        #IMPRIME FONDO
+        WIN.blit(fondo_surface, (0,0))
+        
+        #IMPRIME METAS
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
 
-        WIN.blit(picos1.image, picos1.rect)
-        WIN.blit(picos2.image, picos2.rect)
+        #DIBUJA PICOS
+        picos.draw(WIN)
 
-        WIN.blit(pared1.image, pared1.rect)
-        WIN.blit(pared2.image, pared2.rect)
+        #DIBUJA PAREDES
+        paredes.draw(WIN)
 
+        #DETECTA SI LLEGA A LA META
         if (player1.sprite.llega_meta(meta1) and player2.sprite.llega_meta(meta2)):
             llego = True
             contador_fin += 1
 
             if contador_fin == 30:
                 game_active = False
-        
-        if (player1.sprite.collision(picos1) or player2.sprite.collision(picos2)):
-            player1.sprite.restart()
-            player2.sprite.restart()
 
-        if (player1.sprite.collision(pared1)):
-            player1.sprite.rect.x = pos_ant1[0]
-            player1.sprite.rect.y = pos_ant1[1]
-        
-        if (player2.sprite.collision(pared2)):
-            player2.sprite.rect.x = pos_ant2[0]
-            player2.sprite.rect.y = pos_ant2[1]
+        #=================== COLISION CON PICOS
+
+        for i in range (len(picos)):
+            if(player1.sprite.rect.colliderect(picos.sprites()[i].rect) or player2.sprite.rect.colliderect(picos.sprites()[i].rect)):
+                player1.sprite.restart()
+                player2.sprite.restart()
+
+        #=================== COLISION CON PARED
+
+        for i in range (len(paredes)):
+            if(player1.sprite.rect.colliderect(paredes.sprites()[i].rect)):
+                player1.sprite.rect.x = pos_ant1[0]
+                player1.sprite.rect.y = pos_ant1[1]
+            
+            if(player2.sprite.rect.colliderect(paredes.sprites()[i].rect)):
+                player2.sprite.rect.x = pos_ant2[0]
+                player2.sprite.rect.y = pos_ant2[1]
 
         # MANTENERLOS AL FINAL DEL CICLO
         player1.draw(WIN)

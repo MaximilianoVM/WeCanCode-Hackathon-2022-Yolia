@@ -111,6 +111,7 @@ class Jugador(pygame.sprite.Sprite):
 
     def update(self):
         self.animationState()
+        #self.collision()
     
     def llega_meta(self, meta):
         if self.rect.colliderect(meta.rect):
