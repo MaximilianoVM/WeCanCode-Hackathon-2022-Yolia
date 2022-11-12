@@ -34,7 +34,7 @@ player1.add(Jugador(False, 'mexica'))
 player2 = pygame.sprite.GroupSingle()
 player2.add(Jugador(False, 'cristiano'))
 
-fondo_surface = pygame.image.load('assets/Fondos/FondoCompleto.png').convert()
+fondo_surface = pygame.image.load('assets/Fondos/FondoBien.png').convert()
 fondo_surface = pygame.transform.scale2x(fondo_surface)
 
 meta1 = Meta(52, 124)
