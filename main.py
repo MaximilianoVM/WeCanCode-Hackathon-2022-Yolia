@@ -42,13 +42,16 @@ fondo_surface = pygame.image.load('assets/Fondos/FondoMarco.png').convert()
 fondo_surface = pygame.transform.scale2x(fondo_surface)
 
 #MENU
-titulo_surface = pygame.image.load("assets/HACKATHON FONDO TEMP.png").convert()
+titulo_surface = pygame.image.load("assets/fondo.png").convert()
+nombre_surface = pygame.image.load("assets/Titulo.png").convert()
+nombre_surface = pygame.transform.scale2x(nombre_surface)
 
 ##==========================================BORRAR POR SI ACASO=================================================#
 while menu == True:
         
     #create menu
     WIN.blit(titulo_surface, (0,0))
+    WIN.blit(nombre_surface, (200,50))
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -88,6 +91,7 @@ game_active = False
 contador_fin = 0
 llego = False
 
+WIN.blit(nombre_surface, (200,50))
 while True:
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:
@@ -171,6 +175,7 @@ while True:
 
         text_font = pygame.font.Font('fonts/I-pixel-u.ttf', 60)
         text_surface = text_font.render('YOLIA', False, 'Black')
+
         text_rectangle = text_surface.get_rect(center = (WIDTH/2, 25))
         WIN.blit(text_surface, text_rectangle)
 
