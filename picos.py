@@ -16,7 +16,7 @@ class Picos(pygame.sprite.Sprite):
             self.image.load('assets/Enredaderas/enredadera2.png').convert_alpha()
         
 
-        #self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
+
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
 
 
