@@ -10,10 +10,11 @@ class Picos(pygame.sprite.Sprite):
         self.frames = []
         self.frame_index = 0
 
-        if tipo=='rosales':
+        if tipo == 'rosales':
             self.image = pygame.image.load('assets/Rosales/rosales.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
-        elif tipo=='enredadera':
+            
+        elif tipo == 'enredadera':
             self.image = pygame.image.load('assets/Enredaderas/enredadera2.png').convert_alpha() # Carga imagen
             self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
         
