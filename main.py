@@ -56,6 +56,9 @@ paredes.add(Pared(648 + 64 + 64, 124 + 64 + 64, 'hoyo'))
 
 #===================#
 
+movil1 = Movil(372, 444, 'escultura')
+movil2 = Movil(968, 444, 'estatua')
+
 contador_fin = 0
 
 llego = False
@@ -70,7 +73,7 @@ while True:
         if (event.type == pygame.KEYDOWN and llego == False):
             pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
             pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
-            Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
+            Jugador.playerInput(event, player1, player2)
 
     if game_active:
 
