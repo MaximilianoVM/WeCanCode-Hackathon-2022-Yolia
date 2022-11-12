@@ -21,7 +21,7 @@ start_time = 0
 
 #=================== GRUPOS
 jugador_group = pygame.sprite.GroupSingle()
-jugador_group.add(Jugador(100, 100, dalt))
+jugador_group.add(Jugador(100, 100, dalt, 'mexica'))
 
 fondo_surface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
