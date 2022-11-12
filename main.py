@@ -49,7 +49,9 @@ while True:
             exit()
 
         if event.type == pygame.KEYDOWN:
-            Jugador.playerInput(player1, event, player1, player2)
+            Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
+            print(player2.sprite.rect.y)
+            print(player2.sprite.rect.x)
 
     if game_active:
     

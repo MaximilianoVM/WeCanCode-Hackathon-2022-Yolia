@@ -57,9 +57,13 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugadorWalk[int(self.jugador_index)]
     
     @staticmethod
-    def playerInput(self, event, player1, player2):
+    def playerInput(self, event, player1, player2, WIDTH, HEIGHT):
+
+        #=================== MOVIMIENTO ===================#
+
         if event.key == pygame.K_DOWN:
             print('down')
+            
             player1.sprite.rect.y += 64
             player2.sprite.rect.y += 64
 
@@ -77,6 +81,27 @@ class Jugador(pygame.sprite.Sprite):
             print('right')
             player1.sprite.rect.x += 64
             player2.sprite.rect.x += 64
+        
+        #=================== LIMITES PARA Y ===================#
+        if player1.sprite.rect.y  > 572:
+            player1.sprite.rect.y = 572 
+        if player1.sprite.rect.y  < 60:
+            player1.sprite.rect.y = 60
+
+        if player2.sprite.rect.y  > 572:
+            player2.sprite.rect.y = 572 
+        if player2.sprite.rect.y  < 60:
+            player2.sprite.rect.y = 60
+        #=================== LIMITES PARA X ===================#
+        if player1.sprite.rect.x  > 532:
+            player1.sprite.rect.x = 532
+        if player1.sprite.rect.x  < 20:
+            player1.sprite.rect.x = 20
+
+        if player2.sprite.rect.x  > 1128:
+            player2.sprite.rect.x = 1128 
+        if player2.sprite.rect.x  < 616:
+            player2.sprite.rect.x = 616
 
     def update(self):
         self.animationState()
