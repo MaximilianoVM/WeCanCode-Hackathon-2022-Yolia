@@ -1,4 +1,6 @@
 import pygame
+from jugador import Jugador
+from pared import Pared
 from sys import exit
 
 pygame.init()
@@ -11,7 +13,6 @@ clock = pygame.time.Clock()
 testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
 playerSurface = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
-
 
 while True: 
     for event in pygame.event.get(): 
