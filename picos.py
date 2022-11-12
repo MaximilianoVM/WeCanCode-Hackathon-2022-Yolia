@@ -11,17 +11,11 @@ class Picos(pygame.sprite.Sprite):
         self.frame_index = 0
 
         if tipo=='rosales':
-            self.image.load('assets/rosales.png').convert_alpha()
+            self.image = pygame.image.load('assets/Rosales/rosales.png').convert_alpha() # Carga imagen
+            self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
         elif tipo=='enredadera':
-            self.image.load('assets/Enredaderas/enredadera2.png').convert_alpha()
+            self.image = pygame.image.load('assets/Enredaderas/enredadera2.png').convert_alpha() # Carga imagen
+            self.image = pygame.transform.scale2x(self.image) # Escala imagen a 2x
         
-
         #self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
-
-
-
-    def collision(self, other):
-         return self.rect.colliderect(other.rect)
-
-

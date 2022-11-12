@@ -1,11 +1,15 @@
 import pygame
 
 class Jugador(pygame.sprite.Sprite):
-    def __init__(self, x, y, dalt, religion):
+    def __init__(self, dalt, religion):
         super().__init__()
 
-        self.x = x
-        self.y = y
+        if religion == 'mexica':
+            self.x = 308
+            self.y = 380
+        else:
+            self.x = 904
+            self.y = 380
 
         self.frames = []
         self.frame_index = 0
@@ -86,3 +90,17 @@ class Jugador(pygame.sprite.Sprite):
             return True
         else:
             return False
+
+    def collision_picos(self, picos):
+        if self.rect.colliderect(picos.rect):
+            return True
+        else:
+            return False
+    
+    def reset(self):
+        if self.religion == 'mexica':
+            self.x = 308
+            self.y = 380
+        else:
+            self.x = 904
+            self.y = 380
