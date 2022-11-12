@@ -50,8 +50,6 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugadorWalk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
 
-
-
     def animationState(self):
         self.jugador_index += 0.3
         if self.jugador_index >= len(self.jugadorWalk):
@@ -62,4 +60,8 @@ class Jugador(pygame.sprite.Sprite):
         #self.playerInput()
         self.animationState()
     
-
+    def collision_meta(self, meta):
+        if self.rect.colliderect(meta.rect):
+            return True
+        else:
+            return False
