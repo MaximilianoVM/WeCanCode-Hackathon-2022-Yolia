@@ -9,8 +9,10 @@ from sys import exit
 pygame.init()
 
 #=================== DALTONISMO SI O NO ===================#
-dalt = True
+dalt = False
+menu = True
 #==========================================================#
+
 
 WIDTH, HEIGHT = 1212, 656
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
@@ -30,14 +32,42 @@ start_time = 0
 #=================== GRUPOS
 #PLAYERS
 player1 = pygame.sprite.GroupSingle()
-player1.add(Jugador(False, 'mexica'))
+player1.add(Jugador(dalt, 'mexica'))
 
 player2 = pygame.sprite.GroupSingle()
-player2.add(Jugador(False, 'cristiano'))
+player2.add(Jugador(dalt, 'cristiano'))
 
 #FONDOS
 fondo_surface = pygame.image.load('assets/Fondos/FondoMarco.png').convert()
 fondo_surface = pygame.transform.scale2x(fondo_surface)
+
+#MENU
+titulo_surface = pygame.image.load("assets/HACKATHON FONDO TEMP.png").convert()
+
+##==========================================BORRAR POR SI ACASO=================================================#
+while menu == True:
+        
+    #create menu
+    WIN.blit(titulo_surface, (0,0))
+    pygame.display.update()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                menu = False
+                game_active = True
+                nivel = 1
+                break
+            if event.key == pygame.K_d:
+                dalt = True
+                menu = False
+                game_active = True
+                nivel = 1
+                break
+
+##===========================================================================================#
 
 #METAS FALSAS
 meta1 = Meta(-64, -64)
@@ -154,8 +184,8 @@ while True:
         player1.remove(player1.sprite)
         player2.remove(player2.sprite)
         
-        player1.add(Jugador(False, 'mexica'))
-        player2.add(Jugador(False, 'cristiano'))
+        player1.add(Jugador(dalt, 'mexica'))
+        player2.add(Jugador(dalt, 'cristiano'))
 
         if nivel == 1:
             #METAS
@@ -257,3 +287,4 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+    

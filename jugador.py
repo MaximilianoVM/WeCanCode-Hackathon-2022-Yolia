@@ -18,26 +18,23 @@ class Jugador(pygame.sprite.Sprite):
 
         #=================== CRISTIANO ===================#
         if self.religion == 'cristiano' :
-            #=================== SIN DALTONISMO
-            if dalt == False:
-                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0004.png').convert_alpha())
-                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0005.png').convert_alpha())
-                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0006.png').convert_alpha())
-                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0007.png').convert_alpha())
-                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0008.png').convert_alpha())
-                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0009.png').convert_alpha())
-                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0010.png').convert_alpha())
-                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0011.png').convert_alpha())
+            #=================== DA IGUAL EL DALTONISMO
+            jugador1 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0004.png').convert_alpha())
+            jugador2 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0005.png').convert_alpha())
+            jugador3 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0006.png').convert_alpha())
+            jugador4 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0007.png').convert_alpha())
+            jugador5 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0008.png').convert_alpha())
+            jugador6 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0009.png').convert_alpha())
+            jugador7 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0010.png').convert_alpha())
+            jugador8 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo/Sprite-0011.png').convert_alpha())
 
-                self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
-            #=================== DALTONISMO
-            else:
-                print("dalt")
+            self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
         
         #==================== MEXICA ====================#
         elif self.religion == 'mexica':
             #=================== SIN DALTONISMO
             if dalt == False:
+                print("SIN DALTONISMO")
                 jugador1 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo2/Canek1.png').convert_alpha())
                 jugador2 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo2/Canek2.png').convert_alpha())
                 jugador3 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo2/Canek3.png').convert_alpha())
@@ -47,10 +44,20 @@ class Jugador(pygame.sprite.Sprite):
                 jugador7 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo2/Canek7.png').convert_alpha())
                 jugador8 = pygame.transform.scale2x(pygame.image.load('assets/uglyAssMofo2/Canek8.png').convert_alpha())
 
-                self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
             #=================== DALTONISMO
-            else:
-                print("dalt")
+            elif dalt == True:
+                print("CON DALTONISMO")
+                jugador1 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek1.png').convert_alpha())
+                jugador2 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek2.png').convert_alpha())
+                jugador3 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek3.png').convert_alpha())
+                jugador4 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek4.png').convert_alpha())
+                jugador5 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek5.png').convert_alpha())
+                jugador6 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek6.png').convert_alpha())
+                jugador7 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek7.png').convert_alpha())
+                jugador8 = pygame.transform.scale2x(pygame.image.load('assets/bitchlessMofoDaltonic/Canek8.png').convert_alpha())
+
+
+            self.jugadorWalk = [jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8]
         
         self.jugador_index = 0
         self.image = self.jugadorWalk[self.jugador_index]
