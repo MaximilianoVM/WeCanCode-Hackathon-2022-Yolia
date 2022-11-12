@@ -10,12 +10,12 @@ class Picos(pygame.sprite.Sprite):
         self.frames = []
         self.frame_index = 0
 
-        if tipo=='estatua': #estatua es un obtaculo que reduce vida del cielo
+        if tipo=='estatua': #estatua es un obtaculo del cielo que reduce vida 
             self.image.load('assets/Estatuas/estatua.png').convert_alpha()
-        elif tipo=='escultura': #escultura es obstaculo que reduce vida del mictlan
+        elif tipo=='escultura': #escultura es obstaculo del mictlan que reduce vida 
             self.image.load('assets/escultura.png').convert_alpha()
         
-        
+
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
 
     def collision(self, other):
