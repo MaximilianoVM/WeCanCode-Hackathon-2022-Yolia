@@ -6,10 +6,22 @@ from sys import exit
 
 pygame.init()
 
+#=================== DALTONISMO SI O NO ===================#
+dalt = False
+#==========================================================#
+
 WIDTH, HEIGHT = 1212, 656
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("YOLIA")
 clock = pygame.time.Clock()
+testFont = pygame.font.SysFont("comicsans", 50)
+
+game_active = False
+start_time = 0
+
+#=================== GRUPOS
+jugador_group = pygame.sprite.GroupSingle()
+jugador_group.add(Jugador(100, 100, dalt))
 
 testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png').convert()
 
