@@ -20,7 +20,6 @@ class Movil(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
     
     def mover(self, pos_anterior):
-
         if pos_anterior[1] > self.rect.y:
             #ABAJO A ARRIBA
             print('======= IF UNO =======')
@@ -55,7 +54,6 @@ class Movil(pygame.sprite.Sprite):
                 self.rect.x = 532
             if self.rect.x  < 20:
                 self.rect.x = 20
-            
             if self.rect.y  > 572:
                 self.rect.y = 572
             if self.rect.y  < 60:
@@ -63,11 +61,16 @@ class Movil(pygame.sprite.Sprite):
 
         if self.tipo == 'estatua':
             if self.rect.x  > 1128:
-                self.rect.x = 1128 
+                self.rect.x = 1128
             if self.rect.x  < 616:
                 self.rect.x = 616
-                
             if self.rect.y  > 572:
-                self.rect.y = 572 
+                self.rect.y = 572
             if self.rect.y  < 60:
                 self.rect.y = 60
+
+    def collision_object(self, object):
+        if self.rect.colliderect(object.rect):
+            return True
+        else:
+            return False

@@ -45,13 +45,9 @@ meta2 = Meta(-64, -64)
 
 #PAREDES FALSAS
 paredes = pygame.sprite.Group()
-paredes.add(Pared(-64, -64, 'piedra'))
-paredes.add(Pared(-64, -64, 'hoyo'))
 
 #PICOS FALSOS 
 picos = pygame.sprite.Group()
-picos.add(Picos(-64, -64, 'enredadera'))
-picos.add(Picos(-64, -64, 'rosales'))
 
 #MOVILES FALSOS
 movil1 = Movil(-64, -64, 'escultura')
@@ -89,8 +85,20 @@ while True:
         #EMPUJAR MOVILES
         if(player1.sprite.collision(movil1)):
             movil1.mover(pos_ant1)
+
+            if (player1.sprite.rect.x + 64 > 532 or player1.sprite.rect.x - 64 < 20):
+                player1.sprite.rect.x = pos_ant1[0]
+            if (player1.sprite.rect.y + 64 > 572 or player1.sprite.rect.y - 64 < 60):
+                player1.sprite.rect.y = pos_ant1[1]
+
         if(player2.sprite.collision(movil2)):
             movil2.mover(pos_ant2)
+
+            if (player2.sprite.rect.x + 64 > 1128 or player2.sprite.rect.x - 64 < 616):
+                player2.sprite.rect.x = pos_ant2[0]
+            if (player2.sprite.rect.y + 64 > 572 or player2.sprite.rect.y - 64 < 60):
+                player2.sprite.rect.y = pos_ant2[1]
+                
 
         #DIBUJA PICOS
         picos.draw(WIN)
@@ -133,7 +141,8 @@ while True:
 
     else:
         game_active = True
-        nivel += 1
+        #nivel += 1
+        nivel = 4
         contador_fin = 0
         llego = False
 
