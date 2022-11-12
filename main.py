@@ -149,7 +149,9 @@ while True:
         for i in range (len(picos)):
             if(player1.sprite.rect.colliderect(picos.sprites()[i].rect) or player2.sprite.rect.colliderect(picos.sprites()[i].rect)):
                 player1.sprite.restart()
+                movil1.reiniciar()
                 player2.sprite.restart()
+                movil2.reiniciar()
 
         #=================== COLISION CON PARED
 
@@ -284,6 +286,9 @@ while True:
             #MOVILES
             movil1 = Movil(20 + (64 * 6) - 32, 60 + (64 * 5), 'escultura')
             movil2 = Movil(616 + (64 * 5) - 32, 60 + (64 * 4), 'estatua')
+        
+        if nivel == 5:
+            WIN.blit(titulo_surface, (0,0))
 
     pygame.display.update()
     clock.tick(60)
