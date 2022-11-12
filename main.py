@@ -3,6 +3,7 @@ from jugador import Jugador
 from pared import Pared
 from meta import Meta
 from picos import Picos
+from movil import Movil
 from sys import exit
 
 pygame.init()
