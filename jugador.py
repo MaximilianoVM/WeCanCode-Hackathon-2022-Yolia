@@ -90,7 +90,7 @@ class Jugador(pygame.sprite.Sprite):
         
         #=================== LIMITES PARA Y ===================#
         if player1.sprite.rect.y  > 572:
-            player1.sprite.rect.y = 572 
+            player1.sprite.rect.y = 572
         if player1.sprite.rect.y  < 60:
             player1.sprite.rect.y = 60
 
@@ -112,14 +112,14 @@ class Jugador(pygame.sprite.Sprite):
     def update(self):
         self.animationState()
     
-    def collision_meta(self, meta):
+    def llega_meta(self, meta):
         if self.rect.colliderect(meta.rect):
             return True
         else:
             return False
 
-    def collision_picos(self, picos):
-        if self.rect.colliderect(picos.rect):
+    def collision(self, objetos):
+        if self.rect.colliderect(objetos.rect):
             return True
         else:
             return False
@@ -129,3 +129,4 @@ class Jugador(pygame.sprite.Sprite):
             self.rect = self.image.get_rect(midbottom = (308, 380))
         else:
             self.rect = self.image.get_rect(midbottom = (904, 380))
+

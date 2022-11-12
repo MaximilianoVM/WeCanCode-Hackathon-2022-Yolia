@@ -42,7 +42,12 @@ meta2 = Meta(648, 124)
 picos1 = Picos(52 + 64 + 64, 124, 'enredadera')
 picos2 = Picos(648 + 64, 124, 'rosales')
 
+pared1 = Pared(52 + 64, 124 + 64 + 64 + 64, 'piedra')
+pared2 = Pared(648 + 64 + 64, 124 + 64 + 64, 'piedra')
+
 contador_fin = 0
+
+llego = False
 
 while True:
     for event in pygame.event.get(): 
@@ -50,37 +55,51 @@ while True:
             pygame.quit()
             exit()
 
-        if event.type == pygame.KEYDOWN:
+        if (event.type == pygame.KEYDOWN and llego == False):
+            pos_ant1 = (player1.sprite.rect.x, player1.sprite.rect.y)
+            pos_ant2 = (player2.sprite.rect.x, player2.sprite.rect.y)
             Jugador.playerInput(player1, event, player1, player2, WIDTH, HEIGHT)
             print(player2.sprite.rect.y)
             print(player2.sprite.rect.x)
 
     if game_active:
-    
         WIN.blit(fondo_surface, (0,0))
 
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
+
         WIN.blit(picos1.image, picos1.rect)
         WIN.blit(picos2.image, picos2.rect)
 
-        player1.draw(WIN)
-        player1.update()
-        
-        player2.draw(WIN)
-        player2.update()
+        WIN.blit(pared1.image, pared1.rect)
+        WIN.blit(pared2.image, pared2.rect)
 
-        if (player1.sprite.collision_meta(meta1) and player2.sprite.collision_meta(meta2)):
-            print(contador_fin)
+        if (player1.sprite.llega_meta(meta1) and player2.sprite.llega_meta(meta2)):
+            llego = True
             contador_fin += 1
 
             if contador_fin == 30:
                 game_active = False
         
-        if (player1.sprite.collision_picos(picos1) or player2.sprite.collision_picos(picos2)):
+        if (player1.sprite.collision(picos1) or player2.sprite.collision(picos2)):
             player1.sprite.restart()
             player2.sprite.restart()
 
+        if (player1.sprite.collision(pared1)):
+            player1.sprite.rect.x = pos_ant1[0]
+            player1.sprite.rect.y = pos_ant1[1]
+        
+        if (player2.sprite.collision(pared2)):
+            player2.sprite.rect.x = pos_ant2[0]
+            player2.sprite.rect.y = pos_ant2[1]
+
+        # MANTENERLOS AL FINAL DEL CICLO
+        player1.draw(WIN)
+        player1.update()
+        
+        player2.draw(WIN)
+        player2.update()
+        
     else:
         WIN.blit(fondo_surface, (0,0))
 
