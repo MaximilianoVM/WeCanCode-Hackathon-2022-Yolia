@@ -29,7 +29,7 @@ meta1 = Meta(52, 124)
 meta2 = Meta(WIDTH - 52, HEIGHT -20)
 
 player1 = pygame.sprite.GroupSingle()
-player1.add( Jugador(100, 100, False, 'mexica') )
+player1.add(Jugador(576 - 32 + 20, 60 + 64, False, 'mexica'))
 
 meta1 = Meta(20 + 32, 60 + 64)
 
