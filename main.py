@@ -72,6 +72,12 @@ while True:
     
         WIN.blit(fondo_surface, (0,0))
 
+    WIN.blit(meta1.image, meta1.rect)
+    WIN.blit(meta2.image, meta2.rect)
+    player1.draw(WIN)
+    player1.update()
+    player2.draw(WIN)
+    player2.update()
         WIN.blit(meta1.image, meta1.rect)
         WIN.blit(meta2.image, meta2.rect)
 

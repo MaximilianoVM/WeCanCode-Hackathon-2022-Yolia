@@ -50,45 +50,16 @@ class Jugador(pygame.sprite.Sprite):
         self.image = self.jugadorWalk[self.jugador_index]
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
 
-    def playerInput(self):
-        keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT] and self.rect.x > 0:
-            self.rect.x -= 5
-            self.jugador_index += 1
-            if self.jugador_index >= len(self.jugadorWalk):
-                self.jugador_index = 0
-            self.image = self.jugadorWalk[self.jugador_index]
-
-        if keys[pygame.K_RIGHT] and self.rect.x < 1212:
-            self.rect.x += 5
-            self.jugador_index += 1
-            if self.jugador_index >= len(self.jugadorWalk):
-                self.jugador_index = 0
-            self.image = self.jugadorWalk[self.jugador_index]
-
-        if keys[pygame.K_UP] and self.rect.y > 0:
-            self.rect.y -= 5
-            self.jugador_index += 1
-            if self.jugador_index >= len(self.jugadorWalk):
-                self.jugador_index = 0
-            self.image = self.jugadorWalk[self.jugador_index]
-
-        if keys[pygame.K_DOWN] and self.rect.y < 656:
-            self.rect.y += 5
-            self.jugador_index += 1
-            if self.jugador_index >= len(self.jugadorWalk):
-                self.jugador_index = 0
-            self.image = self.jugadorWalk[self.jugador_index]
 
     def animationState(self):
-        self.jugador_index += 0.5
+        self.jugador_index += 0.3
         if self.jugador_index >= len(self.jugadorWalk):
             self.jugador_index = 0
         self.image = self.jugadorWalk[int(self.jugador_index)]
 
     def update(self):
-        self.playerInput()
+        #self.playerInput()
         self.animationState()
     
     def collision_meta(self, meta):
