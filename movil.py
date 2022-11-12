@@ -19,14 +19,34 @@ class Movil(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
     
-    def mover(self, pos_ant):
-        if pos_ant[1] > self.rect.y:
+    def mover(self, pos_anterior):
+
+        if pos_anterior[1] > self.rect.y:
+            #ABAJO A ARRIBA
+            print('======= IF UNO =======')
+            print("pos anterior[1]: ", pos_anterior[1])
+            print("pos actual y: ", self.rect.y)
             self.rect.y -= 64
-        elif pos_ant[1] < self.rect.y:
+            
+        elif pos_anterior[1] < self.rect.y:
+            #ARRIBA A ABAJO
+            print('======= IF DOS =======')
+            print("pos anterior[1]: ", pos_anterior[1])
+            print("pos actual y: ", self.rect.y)
             self.rect.y += 64
-        elif pos_ant[0] > self.rect.x:
+
+        elif pos_anterior[0] > self.rect.x:
+            #DERECHA A IZQUIERDA
+            print('======= IF TRES =======')
+            print("pos anterior[0]: ", pos_anterior[0])
+            print("pos actual: x", self.rect.x)
             self.rect.x -= 64
-        elif pos_ant[0] < self.rect.x:
+
+        elif pos_anterior[0] < self.rect.x:
+            #EMPUJA A LA DERECHA
+            print('======= IF CUATRO =======')
+            print("pos anterior[0]: ", pos_anterior[0])
+            print("pos actualx: ", self.rect.x)
             self.rect.x += 64
 
         ############LIMITES############
