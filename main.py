@@ -8,7 +8,7 @@ WIN = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("hackathon")
 clock = pygame.time.Clock()
 
-testSurface = pygame.image.load('assets/fondoPrueba2.png')
+testSurface = pygame.image.load('assets/HACKATHON FONDO TEMP.png')
 
 playerSurface = pygame.image.load('assets/Sprite-0006.png')
 
