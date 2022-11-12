@@ -13,8 +13,7 @@ class Picos(pygame.sprite.Sprite):
         self.image = pygame.image.load('assets/Sprite-0006.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom = (self.x, self.y))
 
-        def collision(self, sprite):
-            if sprite.rect.colliderect(self.rect):
-                return True
+        def collision(self, other):
+            return self.rect.colliderect(other.rect)
 
 
