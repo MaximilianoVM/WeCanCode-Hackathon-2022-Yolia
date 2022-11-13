@@ -92,6 +92,7 @@ contador_fin = 0
 llego = False
 
 WIN.blit(nombre_surface, (200,50))
+
 while True:
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:
