@@ -7,6 +7,9 @@ class Movil(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
+        self.start_x = x
+        self.start_y = y
+
         self.tipo = tipo
 
         if self.tipo=='estatua': #estatua es un obtaculo del cielo que reduce vida 
@@ -74,3 +77,6 @@ class Movil(pygame.sprite.Sprite):
             return True
         else:
             return False
+    
+    def reiniciar(self):
+        self.rect = self.image.get_rect(midbottom = (self.start_x, self.start_y))
